@@ -43,7 +43,7 @@ char* cls_read_line()
             break;
         }
 
-        if (i >= sizeof(buffer))
+        if (i >= bufsize)
         {
             fprintf(stderr, "Buffer excedeu o limite suportado.");
             exit(EXIT_FAILURE);
