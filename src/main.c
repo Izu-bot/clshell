@@ -29,7 +29,7 @@ char* cls_read_line()
     int c;
 
     if (buffer == NULL) {
-        fprintf(stderr, "Erro ao tentr alocar memória.");
+        fprintf(stderr, "Não foi possivel alocar memória.");
         exit(EXIT_FAILURE);
     }
 
@@ -41,6 +41,12 @@ char* cls_read_line()
         } else {
             buffer[i] = '\0';
             break;
+        }
+
+        if (i >= sizeof(buffer))
+        {
+            fprintf(stderr, "Buffer excedeu o limite suportado.");
+            exit(EXIT_FAILURE);
         }
     }
 
