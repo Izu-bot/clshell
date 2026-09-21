@@ -12,7 +12,7 @@ int main()
 void cls_loop()
 {
     char *line;
-    int status;
+    int status = 1;
 
     do {
         printf("> ");
